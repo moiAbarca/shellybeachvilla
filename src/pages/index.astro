@@ -1,11 +1,601 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="ホーム" description="オークランドで快適な宿泊をお探しの日本人の方へ。敷金不要、光熱費込み、週単位の低価格レンタル。">
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        オークランドでの<br />新しい生活を始めませんか
+      </h1>
+      <p class="hero-subtitle">
+        敷金不要・光熱費込み・週単位レンタル
+      </p>
+      <div class="hero-cta">
+        <a href="/rooms" class="btn">客室を見る</a>
+        <a href="/contact" class="btn btn-secondary">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="hero-image-placeholder">
+      <img src="/pictures/shellyBeach.png" alt="Shelly Beach Villa" class="hero-image" />
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title">選ばれる理由</h2>
+      <p class="section-subtitle">Shelly Beach Villaの特徴</p>
+      
+      <div class="features-grid">
+        <div class="feature-card card">
+            <div class="mission-icon">
+              <img src="/icons/saveMoney.png" alt="Vision Icon" />
+            </div>
+          <h3 class="feature-title">敷金不要</h3>
+          <p class="feature-text">
+            初期費用を抑えて、気軽に滞在を始められます。
+          </p>
+        </div>
+        
+        <div class="feature-card card">
+            <div class="mission-icon">
+              <img src="/icons/bulb.png" alt="Vision Icon" />
+            </div>
+          <h3 class="feature-title">光熱費込み</h3>
+          <p class="feature-text">
+            電気・ガス・水道・インターネット、すべて込みの料金です。
+          </p>
+        </div>
+        
+        <div class="feature-card card">
+            <div class="mission-icon">
+              <img src="/icons/pin.png" alt="Vision Icon" />
+            </div>
+          <h3 class="feature-title">絶好のロケーション</h3>
+          <p class="feature-text">
+            CBD・Ponsonby近郊の静かで安全なエリアです。
+          </p>
+        </div>
+        
+        <div class="feature-card card">
+          <div class="feature-icon">🏠</div>
+          <h3 class="feature-title">快適な設備</h3>
+          <p class="feature-text">
+            大型スマートTV、洗濯機・乾燥機完備、充実の共用スペース。
+          </p>
+        </div>
+        
+        <div class="feature-card card">
+          <div class="feature-icon">👥</div>
+          <h3 class="feature-title">フレンドリーな環境</h3>
+          <p class="feature-text">
+            国際色豊かなフラットメイトと快適な共同生活。
+          </p>
+        </div>
+        
+        <div class="feature-card card">
+          <div class="feature-icon">📚</div>
+          <h3 class="feature-title">敷地内駐車場</h3>
+          <p class="feature-text">
+            宿泊施設内に駐車場がございます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Carousel Section -->
+<section class="section carousel-section">
+  <div class="container">
+    <h2 class="carousel-section-title">施設の様子</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-container">
+        <!-- Images will cycle through here -->
+        <img src="/pictures/entrance.jpg" alt="Entrance" class="carousel-image active" />
+        <img src="/pictures/entrance3.jpg" alt="Entrance 3" class="carousel-image" />
+        <img src="/pictures/kitchen.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/kitchen2.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/lounge.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/lounge2.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/studyroom.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/toilets.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/balconi.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/backyard.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/around2.jpg" alt="Kitchen" class="carousel-image" />
+        <img src="/pictures/around.jpg" alt="Kitchen" class="carousel-image" />
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+      <button class="carousel-btn next" aria-label="Next image">›</button>
+      
+      <!-- Dots Navigation -->
+      <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Location Section -->
+  <section class="section location-section">
+    <div class="container">
+      <div class="location-content">
+        <div class="location-text">
+          <h2 class="section-title">便利な周辺環境</h2>
+          <p class="location-description">
+            Shelly Beach Villaは、オークランドの中心部に近い人気エリアPonsonbyに位置しています。
+            カフェ、スーパーマーケット、レストラン、ナイトライフなど、生活に必要なものがすべて徒歩圏内です。
+          </p>
+          <ul class="location-list">
+            <li>CBDまで徒歩・バスで10-15分</li>
+            <li>周辺にカフェ・レストラン多数</li>
+            <li>スーパーマーケット徒歩5分</li>
+            <li>バス停徒歩2分</li>
+            <li>静かで安全な住宅街</li>
+          </ul>
+        </div>
+        <div class="location-image">
+          <div class="image-placeholder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.954122733507!2d174.73907567573104!3d-36.84357477223475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4785fe7f17c1%3A0xe61b0867d3b460fa!2s30%20Shelly%20Beach%20Road%2C%20St%20Marys%20Bay%2C%20Auckland%201011!5e0!3m2!1sen!2snz!4v1770861454860!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">まずはお気軽にお問い合わせください</h2>
+        <p class="cta-text">
+          お部屋の空き状況や料金など、ご質問・ご相談を承ります。
+        </p>
+        <a href="/contact" class="btn">お問い合わせはこちら</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    min-height: 500px;
+    padding: 2rem var(--spacing-md);
+    background: var(--color-primary);
+  }
+  
+  .hero-content {
+    padding: var(--spacing-md);
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .hero-cta .btn {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.hero-cta .btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.hero-cta .btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.hero-cta .btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+  
+.hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+  
+  /* Features Section */
+  .mission-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-icon img {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+}
+  .section-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  .features-section {
+    background: var(--color-white);
+    padding: 3rem var(--spacing-md);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .feature-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--color-primary);
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .feature-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-white);
+  }
+  
+  .feature-text {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+  }
+  
+   /* Carousel Section */
+  .carousel-section {
+    background: var(--color-primary);
+    padding: var(--spacing-md);
+  }
+
+    .carousel-section-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel-image.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-btn.prev {
+    left: 20px;
+  }
+  
+  .carousel-btn.next {
+    right: 20px;
+  }
+  
+  .carousel-btn:hover {
+    background: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  
+  /* Dots Navigation */
+  .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .dot.active {
+    background: var(--color-white);
+    width: 30px;
+    border-radius: 6px;
+  }
+  
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .carousel-container {
+      height: 350px;
+    }
+    
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+    
+    .carousel-btn.prev {
+      left: 10px;
+    }
+    
+    .carousel-btn.next {
+      right: 10px;
+    }
+  }
+  
+  /* Location Section */
+  .location-section {
+    background: var(--color-white);
+    padding: 3rem var(--spacing-md);
+  }
+  
+  .location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+  
+  .location-description {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.9;
+  }
+  
+  .location-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .location-list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text);
+  }
+  
+  .location-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+  
+  .location-image {
+    height: 400px;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 3rem var(--spacing-md);
+  }
+  
+  .cta-content {
+    text-align: center;
+    padding: 3rem var(--spacing-md);
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+  }
+  
+  .cta-text {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .btn {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  }
+  
+  /* Image Placeholders */
+  .image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: var(--border-radius);
+    font-weight: 300;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #e0e0de 0%, #d0d0ce 100%);
+    color: var(--color-text-light);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+  }
+  
+  .image-placeholder.large {
+    min-height: 500px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 968px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .location-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .cta-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+
+<script>
+  // Carousel functionality
+  let currentIndex = 0;
+  const images = document.querySelectorAll('.carousel-image');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  
+  function showImage(index) {
+    // Remove active class from all images and dots
+    images.forEach(img => img.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Add active class to current image and dot
+    images[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+  
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+  
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+  
+  // Button event listeners
+  nextBtn?.addEventListener('click', nextImage);
+  prevBtn?.addEventListener('click', prevImage);
+  
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+  
+  // Auto-play (optional - uncomment to enable)
+  // setInterval(nextImage, 5000); // Change image every 5 seconds
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+  });
+</script>

@@ -1,0 +1,125 @@
+:root {
+  --color-primary: #2D5F8D;
+  --color-secondary: #5580B3;
+  --color-accent: #7AB5D9;
+  --color-bg: #F8FAFB;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-border: #E8E8E8;
+  --color-white: #FFFFFF;
+  
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.8;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  font-weight: 300;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.btn:hover {
+  background-color: #1f4363;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(45, 95, 141, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}

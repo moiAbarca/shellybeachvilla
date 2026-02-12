@@ -1,0 +1,185 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'ホーム' },
+  { href: '/rooms', label: '客室' },
+  { href: '/facilities', label: '設備' },
+  { href: '/about', label: '施設について' },
+  { href: '/contact', label: 'お問い合わせ' }
+];
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="Shelly Beach Villa" class="logo-img" />
+    </a>
+      
+      <button class="menu-toggle" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu">
+        {navItems.map(item => (
+          <li>
+            <a 
+              href={item.href} 
+              class:list={['nav-link', { active: currentPath === item.href }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: var(--color-white);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+  }
+  
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .logo-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo-accent {
+    color: var(--color-secondary);
+    -webkit-text-fill-color: var(--color-secondary);
+  }
+
+  .logo-img {
+  height: 65px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 32px;
+  }
+}
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: var(--color-primary);
+    margin: 3px 0;
+    transition: var(--transition);
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 400;
+    transition: var(--transition);
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-primary);
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 76px;
+      left: -100%;
+      flex-direction: column;
+      background: var(--color-white);
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    
+    .nav-menu.active {
+      left: 0;
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  menuToggle?.addEventListener('click', () => {
+    navMenu?.classList.toggle('active');
+    menuToggle?.classList.toggle('active');
+  });
+  
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu?.classList.remove('active');
+      menuToggle?.classList.remove('active');
+    });
+  });
+</script>

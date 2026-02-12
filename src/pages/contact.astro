@@ -1,0 +1,477 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="お問い合わせ" description="Shelly Beach Villaへのお問い合わせはこちらから。お気軽にご連絡ください。">
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">お問い合わせ</h1>
+      <p class="page-subtitle">ご質問・ご相談はお気軽にご連絡ください</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2 class="form-heading">お問い合わせフォーム</h2>
+          <p class="form-description">
+            下記のフォームに必要事項をご記入の上、送信してください。<br />
+            24時間以内にご返信いたします。
+          </p>
+          
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">お名前 <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-input" 
+                required
+                placeholder="山田 太郎"
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">メールアドレス <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input" 
+                required
+                placeholder="example@email.com"
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">電話番号</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                class="form-input"
+                placeholder="09-1234-5678"
+              />
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">件名 <span class="required">*</span></label>
+              <select id="subject" name="subject" class="form-input" required>
+                <option value="">選択してください</option>
+                <option value="room-inquiry">客室のお問い合わせ</option>
+                <option value="pricing">料金について</option>
+                <option value="availability">空き状況確認</option>
+                <option value="viewing">内見予約</option>
+                <option value="facilities">設備について</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">お問い合わせ内容 <span class="required">*</span></label>
+              <textarea 
+                id="message" 
+                name="message" 
+                class="form-textarea" 
+                rows="6"
+                required
+                placeholder="お問い合わせ内容をご記入ください"
+              ></textarea>
+            </div>
+            
+            <div class="form-group">
+              <button type="submit" class="btn btn-submit">送信する</button>
+            </div>
+          </form>
+          
+          <div class="form-success" id="successMessage">
+            <div class="success-icon">✓</div>
+            <h3>送信完了</h3>
+            <p>お問い合わせありがとうございます。<br />24時間以内にご返信いたします。</p>
+          </div>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="contact-info-wrapper">
+          <div class="contact-info-card card">
+            <h3 class="info-heading">所在地</h3>
+            <p class="info-text">
+              Ponsonby, Auckland<br />
+              New Zealand
+            </p>
+          </div>
+          
+          <div class="contact-info-card card">
+            <h3 class="info-heading">営業時間</h3>
+            <p class="info-text">
+              お問い合わせ対応時間<br />
+              月曜日 - 金曜日: 9:00 - 18:00<br />
+              土曜日: 10:00 - 16:00<br />
+              日曜日: 休業
+            </p>
+          </div>
+          
+          <div class="contact-info-card card">
+            <h3 class="info-heading">お問い合わせについて</h3>
+            <p class="info-text">
+              通常、24時間以内にご返信しております。<br />
+              お急ぎの場合は、件名に「至急」とご記入ください。
+            </p>
+          </div>
+          
+          <div class="contact-info-card card">
+            <h3 class="info-heading">よくあるご質問</h3>
+            <ul class="faq-list">
+              <li>
+                <strong>Q: 最短滞在期間は？</strong><br />
+                A: 1週間から可能です。
+              </li>
+              <li>
+                <strong>Q: 内見は可能ですか？</strong><br />
+                A: はい、事前予約制で内見を承っております。
+              </li>
+              <li>
+                <strong>Q: 敷金は必要ですか？</strong><br />
+                A: いいえ、敷金は不要です。
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section map-section">
+    <div class="container">
+      <h2 class="section-title">アクセス</h2>
+      <div class="map-placeholder">
+        <div class="image-placeholder large">Google Map Placeholder</div>
+      </div>
+      <div class="map-directions">
+        <h3 class="directions-heading">主要エリアからのアクセス</h3>
+        <div class="directions-grid">
+          <div class="direction-item">
+            <h4>🚌 CBDから</h4>
+            <p>バスで10-15分</p>
+          </div>
+          <div class="direction-item">
+            <h4>🚶 最寄りバス停</h4>
+            <p>徒歩2分</p>
+          </div>
+          <div class="direction-item">
+            <h4>🏪 スーパーマーケット</h4>
+            <p>徒歩5分</p>
+          </div>
+          <div class="direction-item">
+            <h4>☕ カフェ・レストラン</h4>
+            <p>徒歩圏内多数</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background: var(--color-primary);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.05em;
+  }
+  
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    background: var(--color-white);
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  /* Contact Form */
+  .contact-form-wrapper {
+    position: relative;
+  }
+  
+  .form-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .form-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.95rem;
+  }
+  
+  .required {
+    color: #d32f2f;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--color-white);
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(45, 95, 93, 0.1);
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Success Message */
+  .form-success {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    display: none;
+    z-index: 10;
+  }
+  
+  .form-success.show {
+    display: block;
+  }
+  
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto var(--spacing-md);
+  }
+  
+  .form-success h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .form-success p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  
+  /* Contact Info */
+  .contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .contact-info-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .info-heading {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .info-text {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  
+  .faq-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .faq-list li {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  
+  .faq-list strong {
+    color: var(--color-text);
+  }
+  
+  /* Map Section */
+  .map-section {
+    background: var(--color-bg);
+  }
+  
+  .map-placeholder {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .map-directions {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+  }
+  
+  .directions-heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .directions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .direction-item {
+    text-align: center;
+    padding: var(--spacing-md);
+  }
+  
+  .direction-item h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .direction-item p {
+    color: var(--color-text-light);
+  }
+  
+  /* Image Placeholder */
+  .image-placeholder {
+    background: linear-gradient(135deg, #e0e0de 0%, #d0d0ce 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: var(--border-radius);
+    color: var(--color-text-light);
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  
+  .image-placeholder.large {
+    min-height: 400px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 968px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+    }
+    
+    .directions-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+    
+    .form-heading {
+      font-size: 1.6rem;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const successMessage = document.getElementById('successMessage');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Simulate form submission
+    // In production, this would send data to a server
+    
+    // Show success message
+    successMessage?.classList.add('show');
+    form.style.opacity = '0.3';
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      form.reset();
+      successMessage?.classList.remove('show');
+      form.style.opacity = '1';
+    }, 3000);
+  });
+</script>

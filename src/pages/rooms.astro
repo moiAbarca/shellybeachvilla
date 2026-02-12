@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="客室" description="シングルルームとダブルルームをご用意。快適な滞在をお約束します。">
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">客室のご案内</h1>
+      <p class="page-subtitle">お客様のニーズに合わせた2つのタイプをご用意しています</p>
+    </div>
+  </section>
+
+  <!-- Rooms Section -->
+  <section class="section rooms-section">
+    <div class="container">
+      
+      <!-- Double Room -->
+      <div class="room-card">
+        <div class="room-image">
+          <div class="image-placeholder">Double Room Image</div>
+        </div>
+        <div class="room-content">
+          <h2 class="room-title">ダブルルーム</h2>
+          <p class="room-description">
+            広々としたダブルルームで、カップルやお友達同士の滞在に最適です。
+            快適なベッドと十分な収納スペースを完備しています。
+          </p>
+          
+          <div class="room-features">
+            <h3 class="features-heading">設備・特徴</h3>
+            <ul class="features-list">
+              <li>広々としたダブルベッド</li>
+              <li>クローゼット・収納スペース</li>
+              <li>デスク・チェア</li>
+              <li>大きな窓から自然光が入る明るい室内</li>
+              <li>Wi-Fi完備</li>
+              <li>共用バスルーム利用</li>
+            </ul>
+          </div>
+          
+          <div class="room-pricing">
+            <div class="price-tag">
+              <span class="price-label">週単位レンタル</span>
+              <span class="price-amount">お問い合わせください</span>
+            </div>
+          </div>
+          
+          <a href="/contact" class="btn">お問い合わせ</a>
+        </div>
+      </div>
+
+      <!-- Single Room -->
+      <div class="room-card reverse">
+        <div class="room-image">
+          <div class="image-placeholder">Single Room Image</div>
+        </div>
+        <div class="room-content">
+          <h2 class="room-title">シングルルーム</h2>
+          <p class="room-description">
+            プライベート空間を重視した、一人暮らしに最適なシングルルーム。
+            勉強や仕事に集中できる快適な環境です。
+          </p>
+          
+          <div class="room-features">
+            <h3 class="features-heading">設備・特徴</h3>
+            <ul class="features-list">
+              <li>快適なシングルベッド</li>
+              <li>クローゼット・収納スペース</li>
+              <li>デスク・チェア</li>
+              <li>十分な収納スペース</li>
+              <li>Wi-Fi完備</li>
+              <li>共用バスルーム利用</li>
+            </ul>
+          </div>
+          
+          <div class="room-pricing">
+            <div class="price-tag">
+              <span class="price-label">週単位レンタル</span>
+              <span class="price-amount">お問い合わせください</span>
+            </div>
+          </div>
+          
+          <a href="/contact" class="btn">お問い合わせ</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Room Gallery -->
+  <section class="section gallery-section">
+    <div class="container">
+      <h2 class="section-title">フォトギャラリー</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="image-placeholder">Room Photo 1</div>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">Room Photo 2</div>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">Room Photo 3</div>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">Room Photo 4</div>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">Room Photo 5</div>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">Room Photo 6</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="section included-section">
+    <div class="container">
+      <h2 class="section-title">料金に含まれるもの</h2>
+      <div class="included-grid">
+        <div class="included-item card">
+          <div class="included-icon">💡</div>
+          <h3>光熱費</h3>
+          <p>電気・ガス・水道</p>
+        </div>
+        <div class="included-item card">
+          <div class="included-icon">📶</div>
+          <h3>インターネット</h3>
+          <p>高速Wi-Fi完備</p>
+        </div>
+        <div class="included-item card">
+          <div class="included-icon">🧺</div>
+          <h3>洗濯設備</h3>
+          <p>洗剤込み・無料</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">お部屋の空き状況をご確認ください</h2>
+        <p class="cta-text">料金や入居可能日など、詳しくはお問い合わせください。</p>
+        <a href="/contact" class="btn">お問い合わせはこちら</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Page Header */
+  .page-header {
+    background: var(--color-primary);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.05em;
+  }
+  
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+  }
+  
+  /* Rooms Section */
+  .rooms-section {
+    background: var(--color-white);
+  }
+  
+  .room-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    align-items: center;
+  }
+  
+  .room-card.reverse {
+    direction: rtl;
+  }
+  
+  .room-card.reverse > * {
+    direction: ltr;
+  }
+  
+  .room-image {
+    height: 400px;
+  }
+  
+  .room-content {
+    padding: var(--spacing-md);
+  }
+  
+  .room-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .room-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .room-features {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .features-heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .features-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .features-list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text);
+  }
+  
+  .features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+  
+  .room-pricing {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg);
+    border-radius: var(--border-radius);
+  }
+  
+  .price-tag {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .price-label {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-weight: 300;
+  }
+  
+  .price-amount {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    background: var(--color-bg);
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .gallery-item {
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Included Section */
+  .included-section {
+    background: var(--color-white);
+  }
+  
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .included-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--color-primary);
+  }
+  
+  .included-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .included-item h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .included-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 3rem var(--spacing-md);
+  }
+  
+  .cta-content {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+  }
+  
+  .cta-text {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Image Placeholder */
+  .image-placeholder {
+    background: linear-gradient(135deg, #e0e0de 0%, #d0d0ce 100%);
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: var(--border-radius);
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 968px) {
+    .room-card,
+    .room-card.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+    
+    .cta-title {
+      font-size: 1.8rem;
+    }
+    
+    .included-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
