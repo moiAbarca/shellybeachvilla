@@ -121,7 +121,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
                 <div class="gallery-item">
           <div class="image-placeholder">
-            <img src="/pictures/room10.jpg" alt="Double Room" class="room-img" />
+            <img src="/pictures/room11.jpg" alt="Double Room" class="room-img" />
           </div>
         </div>
       </div>
@@ -396,11 +396,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: var(--spacing-md);
   }
   
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 equal columns */
+  gap: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
   .included-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
+}
+
+@media (max-width: 600px) {
+  .included-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
   
   .included-item {
     text-align: center;
