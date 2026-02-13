@@ -31,7 +31,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
         <div class="facility-image">
-          <div class="image-placeholder">Living Room Image</div>
+          <div class="room-image-container">
+            <img src="/pictures/lounge2.jpg" alt="Double Room" class="room-img" />
+          </div>
         </div>
       </div>
 
@@ -46,11 +48,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>全自動洗濯機</li>
             <li>乾燥機完備</li>
             <li>洗剤無料提供</li>
-            <li>24時間利用可能</li>
           </ul>
         </div>
         <div class="facility-image">
-          <div class="image-placeholder">Laundry Room Image</div>
+          <div class="room-image-container">
+            <img src="/pictures/loundry.jpg" alt="Double Room" class="room-img" />
+          </div>
         </div>
       </div>
 
@@ -69,7 +72,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
         <div class="facility-image">
-          <div class="image-placeholder">Kitchen Image</div>
+          <div class="room-image-container">
+            <img src="/pictures/kitchen.jpg" alt="Double Room" class="room-img" />
+          </div>
         </div>
       </div>
 
@@ -88,7 +93,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
         <div class="facility-image">
-          <div class="image-placeholder">Bathroom Image</div>
+          <div class="room-image-container">
+            <img src="/pictures/toilets.jpg" alt="Double Room" class="room-img" />
+          </div>
         </div>
       </div>
 
@@ -107,12 +114,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
         <div class="facility-image">
-          <div class="image-placeholder">Balcony Image</div>
+          <div class="room-image-container">
+            <img src="/pictures/balconi.jpg" alt="Double Room" class="room-img" />
+          </div>
         </div>
       </div>
 
     </div>
   </section>
+
+    <!-- Video Section -->
+  <section class="section video-section">
+  <div class="container">
+    <h2 class="video-section-title">バーチャルツアー</h2>
+    <div class="video-wrapper">
+      <video 
+        class="video-player" 
+        controls 
+        preload="metadata"
+      >
+        <source src="/pictures/shellybeachvilla.mp4" type="video/mp4">
+        お使いのブラウザは動画タグをサポートしていません。
+      </video>
+    </div>
+  </div>
+</section>
 
   <!-- Additional Features -->
   <section class="section features-grid-section">
@@ -137,22 +163,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="feature-card card">
-          <div class="feature-icon">🧹</div>
-          <h3 class="feature-title">清掃サービス</h3>
-          <p class="feature-text">
-            共用スペースは定期的に清掃。清潔で快適な環境を維持しています。
-          </p>
-        </div>
-        
-        <div class="feature-card card">
-          <div class="feature-icon">📚</div>
-          <h3 class="feature-title">英語レッスン</h3>
-          <p class="feature-text">
-            週1回の無料英語レッスン付き（オプション）。語学力向上をサポートします。
-          </p>
-        </div>
-        
-        <div class="feature-card card">
           <div class="feature-icon">🚗</div>
           <h3 class="feature-title">駐車スペース</h3>
           <p class="feature-text">
@@ -160,13 +170,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
         </div>
         
-        <div class="feature-card card">
-          <div class="feature-icon">♻️</div>
-          <h3 class="feature-title">リサイクル</h3>
-          <p class="feature-text">
-            分別ゴミ箱完備。環境に配慮した生活をサポートします。
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -216,15 +219,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Video Section -->
-  <section class="section video-section">
-    <div class="container">
-      <h2 class="section-title">バーチャルツアー</h2>
-      <div class="video-placeholder">
-        <div class="image-placeholder large">Video / Virtual Tour Placeholder</div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- CTA -->
   <section class="section cta-section">
@@ -262,8 +257,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   /* Facilities Section */
+  .room-image-container {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Room Image - NEW */
+.room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
   .facilities-section {
     background: var(--color-white);
+    padding: var(--spacing-md);
+    padding-bottom: 1rem;
   }
   
   .facility-block {
@@ -326,6 +338,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* Features Grid Section */
   .features-grid-section {
     background: var(--color-bg);
+    padding: var(--spacing-md);
   }
   
   .features-grid {
@@ -402,13 +415,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* Video Section */
   .video-section {
-    background: var(--color-bg);
+    background: var(--color-primary);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
   }
   
   .video-placeholder {
     max-width: 900px;
     margin: 0 auto;
   }
+  .video-section-title {
+    color: var(--color-white);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+  }
+  .video-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
   
   /* CTA Section */
   .cta-section {
