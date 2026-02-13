@@ -61,7 +61,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="feature-card card">
-          <div class="feature-icon">🏠</div>
+            <div class="mission-icon">
+              <img src="/icons/house.png" alt="Vision Icon" />
+            </div>
           <h3 class="feature-title">快適な設備</h3>
           <p class="feature-text">
             大型スマートTV、洗濯機・乾燥機完備、充実の共用スペース。
@@ -69,7 +71,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="feature-card card">
-          <div class="feature-icon">👥</div>
+            <div class="mission-icon">
+              <img src="/icons/nice.png" alt="Vision Icon" />
+            </div>
           <h3 class="feature-title">フレンドリーな環境</h3>
           <p class="feature-text">
             国際色豊かなフラットメイトと快適な共同生活。
@@ -77,7 +81,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="feature-card card">
-          <div class="feature-icon">📚</div>
+            <div class="mission-icon">
+              <img src="/icons/parking.png" alt="Vision Icon" />
+            </div>
           <h3 class="feature-title">敷地内駐車場</h3>
           <p class="feature-text">
             宿泊施設内に駐車場がございます。
@@ -237,18 +243,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
   
   /* Features Section */
-  .mission-icon {
+.mission-icon {
   width: 80px;
   height: 80px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem;  /* More space below icon */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .mission-icon img {
-  width: 190px;
-  height: 190px;
+  width: 80px;   /* Same as container */
+  height: 80px;
   object-fit: contain;
 }
   .section-title {
