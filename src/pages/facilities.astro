@@ -147,7 +147,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       
       <div class="features-grid">
         <div class="feature-card card">
-          <div class="feature-icon">📶</div>
+            <div class="mission-icon">
+              <img src="/icons/iconSingleBlue.png" alt="Vision Icon" />
+            </div>
           <h3 class="feature-title">高速Wi-Fi</h3>
           <p class="feature-text">
             全室で高速インターネットが利用可能。リモートワークや動画視聴も快適です。
@@ -155,7 +157,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="feature-card card">
-          <div class="feature-icon">🔒</div>
+            <div class="mission-icon">
+              <img src="/icons/iconLockBlue.png" alt="Vision Icon" />
+            </div>
           <h3 class="feature-title">セキュリティ</h3>
           <p class="feature-text">
             安全な住環境を提供。各部屋には鍵付きで、プライバシーも守られます。
@@ -163,7 +167,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="feature-card card">
-          <div class="feature-icon">🚗</div>
+            <div class="mission-icon">
+              <img src="/icons/carIconBlue.png" alt="Vision Icon" />
+            </div>
           <h3 class="feature-title">駐車スペース</h3>
           <p class="feature-text">
             路上駐車スペース利用可能。お車での移動も安心です。
@@ -336,6 +342,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   /* Features Grid Section */
+    .mission-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;  /* More space below icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-icon img {
+  width: 80px;   /* Same as container */
+  height: 80px;
+  object-fit: contain;
+}
   .features-grid-section {
     background: var(--color-bg);
     padding: var(--spacing-md);
@@ -374,11 +394,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     background: var(--color-white);
   }
   
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
+  gap: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
   .amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on tablet */
   }
+}
+
+@media (max-width: 600px) {
+  .amenities-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+}
   
   .amenity-group {
     background: var(--color-bg);
@@ -449,13 +482,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* CTA Section */
   .cta-section {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #234948 100%);
+    background: var(--color-primary);
     color: var(--color-white);
+    padding: 3rem var(--spacing-md);
   }
   
   .cta-content {
     text-align: center;
-    padding: var(--spacing-lg) 0;
+    padding: 3rem var(--spacing-md);
   }
   
   .cta-title {
@@ -470,6 +504,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: var(--spacing-lg);
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
+  }
+    .btn {
+  background-color: var(--color-white);
+  color: var(--color-primary);
   }
   
   /* Image Placeholder */
