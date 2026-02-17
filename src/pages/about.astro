@@ -34,7 +34,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
         </div>
         <div class="story-image">
-          <div class="image-placeholder">About Image</div>
+          <div class="room-image-container">
+            <img src="/pictures/aboutus.jpg" alt="Double Room" class="room-img" />
+          </div>
         </div>
       </div>
     </div>
@@ -75,30 +77,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         
         <div class="why-card card">
           <div class="why-number">04</div>
-          <h3 class="why-title">国際的なコミュニティ</h3>
-          <p class="why-text">
-            フレンドリーなフラットメイトとの交流を通じて、
-            多様な文化に触れ、英語力も自然と向上します。
-          </p>
-        </div>
-        
-        <div class="why-card card">
-          <div class="why-number">05</div>
           <h3 class="why-title">安全で静かな環境</h3>
           <p class="why-text">
             治安の良い住宅街に位置し、安心して生活できる環境です。
             夜も静かで、勉強や仕事に集中できます。
           </p>
         </div>
-        
-        <div class="why-card card">
-          <div class="why-number">06</div>
-          <h3 class="why-title">サポート体制</h3>
-          <p class="why-text">
-            オプションで英語レッスンも提供。
-            ニュージーランド生活に関する相談も気軽にできます。
-          </p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -140,7 +125,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="location-map">
-          <div class="image-placeholder large">Map Placeholder</div>
+          <div class="image-placeholder large">
+            <div class="image-placeholder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.954122733507!2d174.73907567573104!3d-36.84357477223475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4785fe7f17c1%3A0xe61b0867d3b460fa!2s30%20Shelly%20Beach%20Road%2C%20St%20Marys%20Bay%2C%20Auckland%201011!5e0!3m2!1sen!2snz!4v1770861454860!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -202,14 +191,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             常に清潔で快適な環境を維持します。
           </p>
         </div>
-        
-        <div class="value-card">
-          <div class="value-icon">🌏</div>
-          <h3 class="value-title">コミュニティ</h3>
-          <p class="value-text">
-            居心地の良いコミュニティづくりを大切にします。
-          </p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -232,6 +214,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   /* Page Header */
+    .room-image-container {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Room Image - NEW */
+.room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
   .page-header {
     background: var(--color-primary);
     padding: var(--spacing-xl) var(--spacing-md);
@@ -253,6 +250,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   /* Story Section */
+
   .story-section {
     background: var(--color-white);
   }
@@ -279,11 +277,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     background: var(--color-bg);
   }
   
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
   .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on tablet */
   }
+}
+
+@media (max-width: 600px) {
+  .why-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+}
   
   .why-card {
     padding: var(--spacing-lg);
@@ -425,13 +436,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* CTA Section */
   .cta-section {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #234948 100%);
+    background: var(--color-primary);
     color: var(--color-white);
+    padding: 3rem var(--spacing-md);
   }
   
   .cta-content {
     text-align: center;
-    padding: var(--spacing-lg) 0;
+    padding: 3rem var(--spacing-md);
   }
   
   .cta-title {
@@ -446,6 +458,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: var(--spacing-lg);
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
+  }
+    .btn {
+  background-color: var(--color-white);
+  color: var(--color-primary);
   }
   
   /* Image Placeholder */
