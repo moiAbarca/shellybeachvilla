@@ -45,7 +45,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Why Choose Us -->
   <section class="section why-section">
     <div class="container">
-      <h2 class="section-title">Shelly Beach Villaが選ばれる理由</h2>
+      <h2 class="why-section-title">Shelly Beach Villaが選ばれる理由</h2>
       
       <div class="why-grid">
         <div class="why-card card">
@@ -95,30 +95,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       
       <div class="location-grid">
         <div class="location-info">
-          <h3 class="location-heading">Ponsonby - オークランドの人気エリア</h3>
+          <h3 class="location-heading">St Marys Bay - オークランドの人気エリア</h3>
           <p class="location-text">
-            Ponsonbyは、オークランドで最も人気のあるエリアの一つです。
+            St Marys Bayは、オークランドで最も人気のあるエリアの一つです。
             トレンディなカフェ、レストラン、ブティック、ナイトライフが充実し、
             多文化的で活気のある雰囲気が特徴です。
           </p>
           
           <div class="location-features">
             <div class="location-feature">
-              <h4>🚶 徒歩圏内</h4>
+              <h4>徒歩圏内</h4>
               <ul>
-                <li>カフェ・レストラン多数</li>
-                <li>スーパーマーケット 5分</li>
-                <li>公園・緑地</li>
-                <li>バス停 2分</li>
+                <li>・カフェ・レストラン多数</li>
+                <li>・スーパーマーケット 5分</li>
+                <li>・公園・緑地</li>
+                <li>・バス停 2分</li>
               </ul>
             </div>
             
             <div class="location-feature">
-              <h4>🚌 公共交通機関</h4>
+              <h4>公共交通機関</h4>
               <ul>
-                <li>CBD まで 10-15分</li>
-                <li>バスルート多数</li>
-                <li>24時間アクセス可能</li>
+                <li>・CBD まで 10-15分</li>
+                <li>・バスルート多数</li>
               </ul>
             </div>
           </div>
@@ -136,12 +135,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Community -->
-  <section class="section community-section">
+  <section class="section why-section">
     <div class="container">
-      <h2 class="section-title">コミュニティ</h2>
+      <h2 class="why-section-title">コミュニティ</h2>
       <div class="community-content">
         <div class="community-image">
-          <div class="image-placeholder">Community Image</div>
+          <div class="image-placeholder">
+            <div class="room-image-container">
+            <img src="/pictures/comunity2.png" alt="Double Room" class="room-img" />
+          </div>
+          </div>
         </div>
         <div class="community-text">
           <h3 class="community-heading">フレンドリーな雰囲気</h3>
@@ -169,7 +172,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       
       <div class="values-grid">
         <div class="value-card">
-          <div class="value-icon">🤝</div>
+          <div class="value-icon">
+            <div class="mission-icon">
+              <img src="/icons/handsShaking2.png" alt="Vision Icon" />
+            </div>
+          </div>
           <h3 class="value-title">尊重</h3>
           <p class="value-text">
             すべての居住者を尊重し、多様性を大切にします。
@@ -177,7 +184,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="value-card">
-          <div class="value-icon">💚</div>
+          <div class="value-icon">
+            <div class="mission-icon">
+              <img src="/icons/heart.png" alt="Vision Icon" />
+            </div>
+          </div>
           <h3 class="value-title">ホスピタリティ</h3>
           <p class="value-text">
             温かく迎え、快適な滞在をサポートします。
@@ -185,7 +196,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         
         <div class="value-card">
-          <div class="value-icon">✨</div>
+          <div class="value-icon">
+            <div class="mission-icon">
+              <img src="/icons/stars.png" alt="Vision Icon" />
+            </div>
+          </div>
           <h3 class="value-title">清潔さ</h3>
           <p class="value-text">
             常に清潔で快適な環境を維持します。
@@ -200,7 +215,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2 class="cta-title">あなたもShelly Beach Villaファミリーの一員に</h2>
+        <h2 class="cta-title">Shelly Beach Villaへようこそ</h2>
         <p class="cta-text">
           お部屋の空き状況や、その他ご質問がございましたら、<br />
           お気軽にお問い合わせください。
@@ -214,7 +229,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   /* Page Header */
-    .room-image-container {
+.room-image-container {
   height: 400px;
   width: 100%;
   overflow: hidden;
@@ -250,9 +265,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   /* Story Section */
+    .section-title {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
 
   .story-section {
     background: var(--color-white);
+    padding: var(--spacing-md)
   }
   
   .story-content {
@@ -274,8 +296,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* Why Section */
   .why-section {
-    background: var(--color-bg);
+    background: var(--color-primary);
+    padding: var(--spacing-md) 0 var(--spacing-lg);
   }
+  .why-section-title {
+    color: var(--color-white);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+  }
+
   
 .why-grid {
   display: grid;
@@ -322,6 +354,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* Location Section */
   .location-section {
     background: var(--color-white);
+    padding: var(--spacing-md) 0 var(--spacing-lg);
   }
   
   .location-grid {
@@ -391,12 +424,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .community-heading {
     font-size: 1.8rem;
     font-weight: 500;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: var(--spacing-md);
   }
   
   .community-paragraph {
-    color: var(--color-text-light);
+    color: var(--color-white);
     line-height: 1.9;
     margin-bottom: var(--spacing-md);
   }
@@ -404,7 +437,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* Values Section */
   .values-section {
     background: var(--color-white);
+    padding: var(--spacing-md);
   }
+  .mission-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;  /* More space below icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-icon img {
+  width: 80px;   /* Same as container */
+  height: 80px;
+  object-fit: contain;
+}
   
   .values-grid {
     display: grid;
@@ -414,7 +462,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   .value-card {
     text-align: center;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
   
   .value-icon {
