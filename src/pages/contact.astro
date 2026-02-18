@@ -100,13 +100,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         
         <!-- Contact Info -->
         <div class="contact-info-wrapper">
-          <div class="contact-info-card card">
-            <h3 class="info-heading">所在地</h3>
-            <p class="info-text">
-              Ponsonby, Auckland<br />
-              New Zealand
-            </p>
-          </div>
           
           <div class="contact-info-card card">
             <h3 class="info-heading">営業時間</h3>
@@ -131,7 +124,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <ul class="faq-list">
               <li>
                 <strong>Q: 最短滞在期間は？</strong><br />
-                A: 1週間から可能です。
+                A: 最低滞在期間なし。お好きなだけご滞在いただけます。
               </li>
               <li>
                 <strong>Q: 内見は可能ですか？</strong><br />
@@ -154,27 +147,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <h2 class="section-title">アクセス</h2>
       <div class="map-placeholder">
-        <div class="image-placeholder large">Google Map Placeholder</div>
+        <div class="image-placeholder small">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.954122733507!2d174.73907567573104!3d-36.84357477223475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4785fe7f17c1%3A0xe61b0867d3b460fa!2s30%20Shelly%20Beach%20Road%2C%20St%20Marys%20Bay%2C%20Auckland%201011!5e0!3m2!1sen!2snz!4v1770861454860!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
       <div class="map-directions">
         <h3 class="directions-heading">主要エリアからのアクセス</h3>
         <div class="directions-grid">
           <div class="direction-item">
-            <h4>🚌 CBDから</h4>
+            <h4>CBDから</h4>
             <p>バスで10-15分</p>
           </div>
           <div class="direction-item">
-            <h4>🚶 最寄りバス停</h4>
+            <h4>最寄りバス停</h4>
             <p>徒歩2分</p>
           </div>
           <div class="direction-item">
-            <h4>🏪 スーパーマーケット</h4>
+            <h4>スーパーマーケット</h4>
             <p>徒歩5分</p>
           </div>
-          <div class="direction-item">
-            <h4>☕ カフェ・レストラン</h4>
-            <p>徒歩圏内多数</p>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -335,7 +327,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   .contact-info-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
   
   .info-heading {
@@ -366,8 +358,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   
   /* Map Section */
+  
+  .cta-content {
+    text-align: center;
+    padding: 3rem var(--spacing-md);
+  }
+  
+  .cta-text {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+  }
   .map-section {
-    background: var(--color-bg);
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 3rem var(--spacing-md);
+  }
+    .section-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+    color: var(--color-white);
   }
   
   .map-placeholder {
@@ -412,15 +425,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   /* Image Placeholder */
   .image-placeholder {
-    background: linear-gradient(135deg, #e0e0de 0%, #d0d0ce 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     border-radius: var(--border-radius);
     color: var(--color-text-light);
-    font-weight: 300;
-    font-size: 1.1rem;
   }
   
   .image-placeholder.large {
