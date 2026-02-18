@@ -143,28 +143,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Map Section -->
-  <section class="section map-section">
+  <!-- Location Section -->
+  <section class="section location-section">
     <div class="container">
-      <h2 class="section-title">アクセス</h2>
-      <div class="map-placeholder">
-        <div class="image-placeholder small">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.954122733507!2d174.73907567573104!3d-36.84357477223475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4785fe7f17c1%3A0xe61b0867d3b460fa!2s30%20Shelly%20Beach%20Road%2C%20St%20Marys%20Bay%2C%20Auckland%201011!5e0!3m2!1sen!2snz!4v1770861454860!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="location-content">
+        <div class="location-text">
+          <h2 class="section-title">便利な周辺環境</h2>
+          <p class="location-description">
+            シェリービーチヴィラは、オークランド中心部に近い人気エリア、ポンソンビーのそばに位置しています。
+            カフェ、スーパーマーケット、レストランなど、日常生活に必要な施設が徒歩圏内に揃っています。
+          </p>
+          <ul class="location-list">
+            <li>CBDまで徒歩・バスで10-15分</li>
+            <li>周辺にカフェ・レストラン多数</li>
+            <li>スーパーマーケット徒歩5分</li>
+            <li>バス停徒歩2分</li>
+            <li>静かで安全な住宅街</li>
+          </ul>
         </div>
-      </div>
-      <div class="map-directions">
-        <h3 class="directions-heading">主要エリアからのアクセス</h3>
-        <div class="directions-grid">
-          <div class="direction-item">
-            <h4>CBDから</h4>
-            <p>バスで10-15分</p>
-          </div>
-          <div class="direction-item">
-            <h4>最寄りバス停</h4>
-            <p>徒歩2分</p>
-          </div>
-          <div class="direction-item">
-            <h4>スーパーマーケット</h4>
-            <p>徒歩5分</p>
+        <div class="location-image">
+          <div class="image-placeholder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.954122733507!2d174.73907567573104!3d-36.84357477223475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4785fe7f17c1%3A0xe61b0867d3b460fa!2s30%20Shelly%20Beach%20Road%2C%20St%20Marys%20Bay%2C%20Auckland%201011!5e0!3m2!1sen!2snz!4v1770861454860!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           
         </div>
@@ -328,99 +327,87 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   
   .contact-info-card {
     padding: var(--spacing-md);
+    color: var(--color-primary);
+    background-color: var(--color-primary);;
   }
   
   .info-heading {
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--color-primary);
+    color: var(--color-white);
     margin-bottom: var(--spacing-sm);
   }
   
   .info-text {
     color: var(--color-text-light);
     line-height: 1.8;
+    color: var(--color-white);
   }
   
   .faq-list {
     list-style: none;
     padding-left: 0;
+    
   }
   
   .faq-list li {
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-light);
     line-height: 1.8;
+    color: var(--color-white);
   }
   
   .faq-list strong {
-    color: var(--color-text);
+    color: var(--color-accent);
+    
   }
   
   /* Map Section */
-  
-  .cta-content {
-    text-align: center;
-    padding: 3rem var(--spacing-md);
-  }
-  
-  .cta-text {
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-lg);
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  .map-section {
+  /* Location Section */
+  .location-section {
     background: var(--color-primary);
-    color: var(--color-white);
     padding: 3rem var(--spacing-md);
+  }
+  
+  .location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+  
+  .location-description {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.9;
+  }
+  
+  .location-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .location-list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-white);
+  }
+  
+  .location-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-white);
+    font-weight: bold;
+  }
+  
+  .location-image {
+    height: 400px;
   }
     .section-title {
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: var(--spacing-md);
-    letter-spacing: 0.05em;
     color: var(--color-white);
-  }
-  
-  .map-placeholder {
-    margin-bottom: var(--spacing-lg);
-  }
-  
-  .map-directions {
-    background: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-  }
-  
-  .directions-heading {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--color-primary);
     margin-bottom: var(--spacing-md);
-    text-align: center;
-  }
-  
-  .directions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-  }
-  
-  .direction-item {
-    text-align: center;
-    padding: var(--spacing-md);
-  }
-  
-  .direction-item h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-xs);
-  }
-  
-  .direction-item p {
-    color: var(--color-text-light);
   }
   
   /* Image Placeholder */

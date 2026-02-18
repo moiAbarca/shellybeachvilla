@@ -105,19 +105,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="location-features">
             <div class="location-feature">
               <h4>徒歩圏内</h4>
-              <ul>
-                <li>・カフェ・レストラン多数</li>
-                <li>・スーパーマーケット 5分</li>
-                <li>・公園・緑地</li>
-                <li>・バス停 2分</li>
+              <ul class="features-list">
+                <li>カフェ・レストラン多数</li>
+                <li>スーパーマーケット 5分</li>
+                <li>公園・緑地</li>
+                <li>バス停 2分</li>
               </ul>
             </div>
             
             <div class="location-feature">
               <h4>公共交通機関</h4>
-              <ul>
-                <li>・CBD まで 10-15分</li>
-                <li>・バスルート多数</li>
+              <ul class="features-list">
+                <li>CBD まで 10-15分</li>
+                <li>バスルート多数</li>
               </ul>
             </div>
           </div>
@@ -399,6 +399,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .location-feature li {
     padding: 0.25rem 0;
     color: var(--color-text-light);
+  }
+  .features-list li::before {
+    content: '✓';
+    position: flex;
+    left: flex;
+    color: var(--color-accent);
+    font-weight: bold;
   }
   
   .location-map {
